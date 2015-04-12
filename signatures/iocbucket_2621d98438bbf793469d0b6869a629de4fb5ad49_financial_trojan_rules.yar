@@ -1,19 +1,4 @@
-rule xmlc : banker
-{
-	meta:
-		author = "@iocbucket"
-    strings: 
-        $a = "/c del" fullword
-        $b = "PostDel" fullword
-        $c = ">> NUL" fullword
-        $d = "LOADXML"
-        $e = "lm.dat"
-        $f = "---------------%s----------------"
-        $g = /(\x00|\x20)([a-z0-9]{5,8}\.dll)\x00{1,8}\\\2/
 
-    condition:
-        filesize < 150KB and (3 of ($a,$b,$c,$d,$e,$f) or #g >= 2)      
-}
 
 rule silent_banker : banker
 {
@@ -62,7 +47,7 @@ $a = "SPYNET"
 $b = "SpyEye"
 
 condition:
-($a nd $b)
+($a and $b)
 }
 
 rule tdl3

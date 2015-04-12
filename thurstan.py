@@ -620,7 +620,7 @@ def initializeYaraRules_ng():
        
     except Exception, e:
         log("ERROR", "Error reading signatures")
-	traceback.print_exc()
+	log("ERROR", data)
         if args.debug:
             traceback.print_exc()
 

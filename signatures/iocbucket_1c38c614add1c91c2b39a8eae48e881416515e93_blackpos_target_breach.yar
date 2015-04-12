@@ -40,9 +40,3 @@ rule CrowdStrike_blackpos_memscanner
     condition:
         2 of ($message*)
 }
-Snort Rules
-
-The following Snort rules can be used to detect potential BlackPOS activity.
-alert tcp any any <> 199.188.204.182 21 (msg: "TargetBreach Exfil C2"; sid: xxx;)
-alert tcp any any <> 50.87.167.144 21 (msg: "TargetBreach Exfil C2"; sid: xxx;)
-alert tcp any any <> 63.111.113.99 21 (msg: "TargetBreach Exfil C2"; sid: xxx;)
