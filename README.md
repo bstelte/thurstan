@@ -33,8 +33,6 @@ Detection is based on four detection methods:
     usage: thurstan.exe [-h] [-x serverip] [-p path] [-s kilobyte] [--printAll] [--noprocscan]
                     [--nofilescan] [--noindicator] [--debug]
 
-    Loki - Simple IOC Scanner
-
     optional arguments:
       -h, --help     show this help message and exit
       -x serverip    IP-adr of thurstan server
