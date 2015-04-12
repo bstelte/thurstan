@@ -19,14 +19,14 @@ Detection is based on four detection methods:
 
   - Download the program archive via the button "Download ZIP" on the right sidebar
   - Unpack THURSTAN locally
-  - open a command line "cmd.exe" and run it from there
+  - open a command line "cmd.exe" and run server.exe from there
 
 ### Run Client
 
   - Download the program archive via the button "Download ZIP" on the right sidebar
   - Unpack THURSTAN locally
   - Provide the folder to a target system that should be scanned: removable media, network share, folder on target system
-  - open a command line "cmd.exe" as Administrator and run thurstan.exe from there with parameter "-x <serverip>" (you can also run LOKI without administrative privileges but some checks will be disabled and relevant objects on disk will not be accessible)
+  - open a command line "cmd.exe" as Administrator and run thurstan.exe from there with parameter "-x Server-IP" (you can also run LOKI without administrative privileges but some checks will be disabled and relevant objects on disk will not be accessible)
 
 ## Usage
 
