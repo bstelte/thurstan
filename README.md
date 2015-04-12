@@ -37,7 +37,7 @@ Detection is based on four detection methods:
       -h, --help     show this help message and exit
       -x serverip    IP-adr of thurstan server
       -p path        Path to scan
-      -s kilobyte    Maximum file site to check in KB (default 2000 KB)
+      -s kilobyte    Maximum file size to check in KB (default 2000 KB)
       --printAll     Print all files that are scanned
       --noprocscan   Skip the process scan
       --nofilescan   Skip the file scan
