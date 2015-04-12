@@ -74,6 +74,7 @@ def recv_timeout(the_socket,timeout=1):
     #total data partwise in an array
     total_data=[];
     data='';
+    c = 0;
      
     #beginning time
     begin=time.time()
@@ -86,6 +87,10 @@ def recv_timeout(the_socket,timeout=1):
         elif time.time()-begin > timeout*2:
             break
          
+	c += 1
+	if not args.noindicator:
+        	printProgress(c)
+
         #recv something
         try:
             data = the_socket.recv(8192)
@@ -101,6 +106,10 @@ def recv_timeout(the_socket,timeout=1):
      
     #join all parts to make final string
     return ''.join(total_data)
+
+from itertools import cycle, izip
+def str_xor(s1, s2):
+ return ''.join(chr(ord(c)^ord(k)) for c,k in izip(s1, cycle(s2)))
 
 def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, false_hashes):
 
@@ -598,7 +607,7 @@ def initializeYaraRules_ng():
 	s.send('yara')
 	while True:
 		#data = s.recv(10000)
-		data = recv_timeout(s)
+		data = str_xor(recv_timeout(s), 'YaraRules')
 		if (data == "all"): break
 		else:
 			compiledRules = yara.compile(source=data)

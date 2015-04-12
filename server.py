@@ -104,6 +104,10 @@ def getFileNameIOCs(ioc_file):
 
     return filenames
 
+from itertools import cycle, izip
+def str_xor(s1, s2):
+ return ''.join(chr(ord(c)^ord(k)) for c,k in izip(s1, cycle(s2)))
+
 print "  Simple IOC Scanner next generation"
 print "  "
 print "  (c) Björn Stelte"
@@ -170,10 +174,10 @@ while True:
 		    		logfile.write('"%s", "%s", "%s"\r\n' % (addr, currentTime, data))
 		   if (data == "yara"):
 			for i in yaraRulesText[0:]: 
-				c.send(i)
+				c.send(str_xor(i, 'YaraRules'))
 				rec = c.recv(1024)
 			print "%s Yara Rules send" % len(yaraRulesText)
-			c.send('all')	
+			c.send(str_xor('all', 'YaraRules'))	
 		   elif (data == "ioc"): 
 			c.send(pickle.dumps(filenameIOCs))
 			print "%s IOCs send" % len(filenameIOCs)
