@@ -44,8 +44,7 @@ strings:
 	$a5="S11SWFOrVwR9dnFTUgRUVlNHWVdXBFpTVgRdUlpWRVZZWARdUqhZVlpFR1kEUVNSXahTVgRaU1YEUVNSXahTVl1SWwRZValdVFFZUqgQBF1SWlZFVllYBFRTVqg="
 	$a6="7dqm2ODf5N/Y2N/m6+br3dnZpunl44g="
 	$a7="vd/m7OXd2ai/5u7a59rr7Ki45drcqMPl5t/c5dqIZw=="
-	$a8="vd/m7OXd2ai/usPl5qjY2uXp69nZqO7l2qjf5u7a59rr7Kjf5tzr2u7n6euo4+Xm39zl2qju5dqo
-	4+Xm39zl2t/m7ajr19vf2OPr39rj5eaZmqbs5OSI Njl2tyI"
+	$a8="vd/m7OXd2ai/usPl5qjY2uXp69nZqO7l2qjf5u7a59rr7Kjf5tzr2u7n6euo4+Xm39zl2qju5dqo4+Xm39zl2t/m7ajr19vf2OPr39rj5eaZmqbs5OSI Njl2tyI"
 	$a9="C:\\Windows\\System32\\sysprep\\sysprep.exe" wide
 	$a10="%SystemRoot%\\system32\\cmd.exe" wide
 	$a11="msger_install.dll"
@@ -112,8 +111,7 @@ strings:
 	$mz="MZ"
 	$a1="%s\\system\\%d.txt"
 	$a2="_msger"
-	$a3="http://%s/lib/common.asp?action=user_login&uid=%s&lan=%s&host=%s&os=%s&proxy
-	=%s"
+	$a3="http://%s/lib/common.asp?action=user_login&uid=%s&lan=%s&host=%s&os=%s&proxy=%s"
 	$a4="http://%s/data/%s.1000001000"
 	$a5="/lib/common.asp?action=user_upload&file="
 	$a6="%02X-%02X-%02X-%02X-%02X-%02X"
