@@ -3732,3 +3732,18 @@ A37D6F31AB21517E1CFB1F31C215D02C; iocbucket_f5163b0edadcf40ada4ae0594c399ef2b205
 cbe4cb47c73bfd9b8463f6dfae626872; iocbucket_f5163b0edadcf40ada4ae0594c399ef2b2058489_pws-zbot.gen.x_trojan.ioc
 1b22c2f6988b89c21b7a5d8b7631f9ca; iocbucket_f5163b0edadcf40ada4ae0594c399ef2b2058489_pws-zbot.gen.x_trojan.ioc
 f533b6c18dfdd82bf04efc8754071a02; iocbucket_f5163b0edadcf40ada4ae0594c399ef2b2058489_pws-zbot.gen.x_trojan.ioc
+
+2682a1246199a18967c98cb32191230c; Hellsing-APT-Gruppe	31. März 2014 	freebsd.extrimtur[.]com 	1.6.1_MOTAC
+31b3cc60dbecb653ae972db9e57e14ec; Hellsing-APT-Gruppe	31. März 2014 	freebsd.extrimtur[.]com 	1.6.1_MOTAC
+4dbfd37fd851daebdae7f009adec3cbd; Hellsing-APT-Gruppe 	08. Nov. 2013 	articles.whynotad[.]com 	1.5_articles.whynotad.com-nsc
+015915bbfcda1b2b884db87262970a11; Hellsing-APT-Gruppe	19. Feb. 2014 	guaranteed9.strangled[.]net 	1.5_guaranteed9-nsc
+3a40e0deb14f821516eadaed24301335; Hellsing-APT-Gruppe	31. März 2014 	hosts.mysaol[.]com 	1.6.1_imi;simple
+73396bacd33cde4c8cb699bcf11d9f56; Hellsing-APT-Gruppe	08. Nov. 2013 	web01.crabdance[.]com 	1.5_op_laptop
+7c0be4e6aee5bc5960baa57c6a93f420; Hellsing-APT-Gruppe	08. Nov. 2013 	hosts.mysaol[.]com 	1.5_MMEA
+bff9c356e20a49bbcb12547c8d483352; Hellsing-APT-Gruppe	02. April 2014 	imgs09.homenet[.]org 	1.6.1_It
+c0e85b34697c8561452a149a0b123435; Hellsing-APT-Gruppe	02. April 2014 	imgs09.homenet[.]org 	1.6.1_It
+f13deac7d2c1a971f98c9365b071db92; Hellsing-APT-Gruppe	08. Nov. 2013 	hosts.mysaol[.]com 	1.5_MMEA
+f74ccb013edd82b25fd1726b17b670e5; Hellsing-APT-Gruppe	12. Mai 2014 	second.photo-frame[.]com 	1.6.2s_Ab
+14309b52f5a3df8cb0eb5b6dae9ce4da; Hellsing-APT-Gruppe test.exe
+621e4c293313e8638fb8f725c0ae9d0f; Hellsing-APT-Gruppe xkat.exe
+
