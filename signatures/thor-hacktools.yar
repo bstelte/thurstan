@@ -1329,7 +1329,7 @@ rule MS08_067_Exploit_Hacktools_CN {
 		$s7 = "Maybe Patched!" fullword ascii
 		$s8 = "RpcExceptionCode() = %u" fullword ascii
 		$s11 = "ph4nt0m" fullword wide
-		$s12 = "\\\\%s\\IPC$" fullword ascii
+		$s12 = "\\\\%s\\IPC" ascii
 	condition:
 		4 of them
 }
@@ -3158,27 +3158,7 @@ rule LinuxHacktool_eyes_scanssh {
 	condition:
 		all of them
 }
-rule LinuxHacktool_eyes_scanner {
-	meta:
-		description = "Linux hack tools - file scanner"
-		author = "Florian Roth"
-		reference = "not set"
-		date = "2015/01/19"
-		hash = "5488698b7f9090f45096517e61768efd32299d5b"
-	strings:
-		$s0 = "%s: line %d: list delimiter not followed by keyword" fullword ascii
-		$s1 = "checking for version `%s' in file %s required by file %s" fullword ascii
-		$s3 = "%s: line %d: expected service, found `%s'" fullword ascii
-		$s4 = "truncated dump file; tried to read %d header bytes, only got %lu" fullword ascii
-		$s5 = "%s: line %d: list delimiter not followed by domain" fullword ascii
-		$s7 = "'protochain' not supported with radiotap headers" fullword ascii
-		$s8 = "%s(): unsuported injection type" fullword ascii
-		$s9 = "ELF load command address/offset not properly aligned" fullword ascii
-		$s10 = "@(#) $Header: /tcpdump/master/libpcap/gencode.c,v 1.221.2.27 2005/07/14 16:01:46" ascii
-		$s20 = "%s%s%s:%u: %s%sAssertion `%s' failed." fullword ascii
-	condition:
-		4 of them
-}
+
 rule LinuxHacktool_eyes_pscan2 {
 	meta:
 		description = "Linux hack tools - file pscan2"
@@ -3276,4 +3256,140 @@ rule WMI_vbs : APT
 		$s3 = "WScript.Echo \"   $$\\      $$\\ $$\\      $$\\ $$$$$$\\ $$$$$$$$\\ $$\\   $$\\ $$$$$$$$\\  $$$$$$"  
     condition:
         all of them	
+}
+
+rule CN_Toolset__XScanLib_XScanLib_XScanLib {
+	meta:
+		description = "Detects a Chinese hacktool from a disclosed toolset - from files XScanLib.dll, XScanLib.dll, XScanLib.dll"
+		author = "Florian Roth"
+		reference = "http://qiannao.com/ls/905300366/33834c0c/"
+		date = "2015/03/30"
+		score = 70
+		super_rule = 1
+		hash0 = "af419603ac28257134e39683419966ab3d600ed2"
+		hash1 = "c5cb4f75cf241f5a9aea324783193433a42a13b0"
+		hash2 = "135f6a28e958c8f6a275d8677cfa7cb502c8a822"
+	strings:
+		$s1 = "Plug-in thread causes an exception, failed to alert user." fullword
+		$s2 = "PlugGetUdpPort" fullword
+		$s3 = "XScanLib.dll" fullword
+		$s4 = "PlugGetTcpPort" fullword
+		$s11 = "PlugGetVulnNum" fullword
+	condition:
+		all of them
+}
+
+rule CN_Toolset_NTscan_PipeCmd {
+	meta:
+		description = "Detects a Chinese hacktool from a disclosed toolset - file PipeCmd.exe"
+		author = "Florian Roth"
+		reference = "http://qiannao.com/ls/905300366/33834c0c/"
+		date = "2015/03/30"
+		score = 70
+		hash = "a931d65de66e1468fe2362f7f2e0ee546f225c4e"
+	strings:
+		$s2 = "Please Use NTCmd.exe Run This Program." fullword ascii
+		$s3 = "PipeCmd.exe" fullword wide
+		$s4 = "\\\\.\\pipe\\%s%s%d" fullword ascii
+		$s5 = "%s\\pipe\\%s%s%d" fullword ascii
+		$s6 = "%s\\ADMIN$\\System32\\%s%s" fullword ascii
+		$s7 = "%s\\ADMIN$\\System32\\%s" fullword ascii
+		$s9 = "PipeCmdSrv.exe" fullword ascii
+		$s10 = "This is a service executable! Couldn't start directly." fullword ascii
+		$s13 = "\\\\.\\pipe\\PipeCmd_communicaton" fullword ascii
+		$s14 = "PIPECMDSRV" fullword wide
+		$s15 = "PipeCmd Service" fullword ascii
+	condition:
+		4 of them
+}
+
+rule CN_Toolset_LScanPortss_2 {
+	meta:
+		description = "Detects a Chinese hacktool from a disclosed toolset - file LScanPortss.exe"
+		author = "Florian Roth"
+		reference = "http://qiannao.com/ls/905300366/33834c0c/"
+		date = "2015/03/30"
+		score = 70
+		hash = "4631ec57756466072d83d49fbc14105e230631a0"
+	strings:
+		$s1 = "LScanPort.EXE" fullword wide
+		$s3 = "www.honker8.com" fullword wide
+		$s4 = "DefaultPort.lst" fullword ascii
+		$s5 = "Scan over.Used %dms!" fullword ascii
+		$s6 = "www.hf110.com" fullword wide
+		$s15 = "LScanPort Microsoft " fullword wide
+		$s18 = "L-ScanPort2.0 CooFly" fullword wide
+	condition:
+		4 of them
+}
+
+rule CN_Toolset_sig_1433_135_sqlr {
+	meta:
+		description = "Detects a Chinese hacktool from a disclosed toolset - file sqlr.exe"
+		author = "Florian Roth"
+		reference = "http://qiannao.com/ls/905300366/33834c0c/"
+		date = "2015/03/30"
+		score = 70
+		hash = "8542c7fb8291b02db54d2dc58cd608e612bfdc57"
+	strings:
+		$s0 = "Connect to %s MSSQL server success. Type Command at Prompt." fullword ascii
+		$s11 = ";DATABASE=master" fullword ascii
+		$s12 = "xp_cmdshell '" fullword ascii
+		$s14 = "SELECT * FROM OPENROWSET('SQLOLEDB','Trusted_Connection=Yes;Data Source=myserver" ascii
+	condition:
+		all of them
+}
+
+rule Mimikatz_Lib {
+    meta:
+        author = "Florian Roth"
+        score = 80
+        date = "2015/02/03"
+        description = "Detects the mimikatz library files - malicious tool to extract credentials/tickets/hashes from memory/dump files"
+    strings:
+    	$mz = { 4d 5a }
+        $s1 = "mimikatz" wide
+        $s2 = "mimilib.dll" wide
+     condition:
+        ( $mz at 0 ) and all of ( $s* )
+}
+
+rule MimikatzKerberosTicketDump
+{
+	meta:
+		description = "Magic-value for Mimikatz dumped Kerberos tickets"
+		author = "M. Stroebel (HVS)"
+		score = 50
+	condition:
+		uint16(0) == 0x8276 and filesize < 3000
+}
+
+rule Mimikatz_Logfile
+{
+	meta:
+		description = "Detects a log file generated by malicious hack tool mimikatz"
+		author = "Florian Roth"
+		score = 80
+		date = "2015/03/31"
+	strings: 
+		$s1 = "SID               :" ascii fullword
+		$s2 = "* NTLM     :" ascii fullword
+		$s3 = "Authentication Id :" ascii fullword
+		$s4 = "wdigest :" ascii fullword
+	condition:
+		all of them
+}
+
+rule SAM_Hive_Backup
+{
+	meta:
+		description = "Detects a SAM hive backup file"
+		author = "Florian Roth"
+		reference = "https://github.com/gentilkiwi/mimikatz/wiki/module-~-lsadump"
+		score = 60
+		date = "2015/03/31"
+	strings: 
+		$s1 = "\\SystemRoot\\System32\\Config\\SAM" wide fullword
+	condition:
+		uint32(0) == 0x66676572 and $s1 in (0..100)
 }
