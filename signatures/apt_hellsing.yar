@@ -122,7 +122,6 @@ condition:
 rule apt_hellsing_irene {
 meta:
 	version = "1.0"
-	Page 8
 	filetype = "PE"
 	author = "Costin Raiu, Kaspersky Lab"
 	copyright = "Kaspersky Lab"

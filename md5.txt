@@ -1,2 +1,1 @@
-eeec9df47554b80f7947bbd6d2797555  thurstan.exe
-0ac43992eb74ab76acb04785af34439a  server.exe
+a30aa3386c157652e5b2b02c29b37b69  thurstan.exe
