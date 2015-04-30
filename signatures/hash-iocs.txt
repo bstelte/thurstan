@@ -4063,3 +4063,12 @@ d596827d48a3ff836545b3a999f2c3e3;Russian APT Malware CozyDuke
 883292f00e5836f99a1943a6e0164d8c6c124478;Cosmic Duke Sample F-Secure http://goo.gl/u8WAVh
 8ad2003b99d92dfb9d85912ee6a39c46b1ec8137;Cosmic Duke Sample F-Secure http://goo.gl/u8WAVh
 
+#mumblehard
+65a2dc362556b55cf2dbe3a10a2b337541eea4eb;ELF executable 2009-05-11 Linux/Mumblehard.K.Gen
+331ca10a5d1c5a5f3045511f7b66340488909339;ELF executable 2014-06-06 Linux/Mumblehard.E.Gen
+2f2e5776fb7405996feb1953b8f6dbca209c816a;ELF executable 2014-07-01 Linux/Mumblehard.D.Gen
+95aed86918568b122712bdbbebdd77661e0e6068;ELF executable 2014-11-23 Linux/Mumblehard.J.Gen
+c83042491efade4a4a46f437bee5212033c168ee;ZIP archive 2014-07-04 Linux/Mumblehard.E.Gen
+e62c7c253f18ec7777fdd57e4ae500ad740183fb;ELF executable 2014-05-17 Linux/Mumblehard.E.Gen
+58d4f901390b2ecb165eb455501f37ef8595389a;ZIP archive 2009-03-25 Linux/Mumblehard.M.Gen
+4ae33caebfd9f1e3481458747c6a0ef3dee05e49;ELF executable 2013-06-27 Linux/Mumblehard.M.Gen
