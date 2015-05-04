@@ -64,7 +64,7 @@ except Exception, e:
 #     isLinux= False
 
 # Predefined paths to skip (Linux platform)
-LINUX_PATH_SKIPS_START = Set(["/proc", "/dev", "/media", "/sys/kernel/debug", "/sys/kernel/slab", "/sys/devices", "/usr/src/linux" ])
+LINUX_PATH_SKIPS_START = Set(["/proc", "/dev", "/sys/kernel/debug", "/sys/kernel/slab", "/sys/devices", "/usr/src/linux" ])
 LINUX_PATH_SKIPS_END = Set(["/initctl"])
 
 def recv_timeout(the_socket,timeout=1):
