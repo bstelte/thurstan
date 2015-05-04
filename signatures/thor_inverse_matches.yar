@@ -312,7 +312,7 @@ rule APT_Cloaked_SuperScan
 		$s0 = "SuperScan4.exe" wide fullword
 		$s1 = "Foundstone Inc." wide fullword
 	condition:
-		( $magic at 0 ) and $s0 and $s1 and not filename contains "superscan"
+		( $magic at 0 ) and $s0 and $s1
 }
 
 rule APT_Cloaked_ScanLine
@@ -328,6 +328,6 @@ rule APT_Cloaked_ScanLine
 		$s1 = "Command line port scanner" wide fullword
 		$s2 = "sl.exe" wide fullword
 	condition:
-		( $magic at 0 ) and $s0 and $s1 and $s2 and not filename == "sl.exe"
+		( $magic at 0 ) and $s0 and $s1 and $s2
 }
 

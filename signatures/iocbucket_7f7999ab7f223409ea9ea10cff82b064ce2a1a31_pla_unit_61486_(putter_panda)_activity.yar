@@ -59,7 +59,7 @@ rule CrowdStrike_PutterPanda_01 : fourh_stack_strings putterpanda
 	}
 	
 	
-rule CrowdStrike_ PutterPanda _02 : rc4_dropper putterpanda
+rule CrowdStrike_PutterPanda_02 : rc4_dropper putterpanda
 	{
 	meta:
 		description = "PUTTER PANDA - RC4 dropper"
@@ -93,7 +93,7 @@ rule CrowdStrike_ PutterPanda _02 : rc4_dropper putterpanda
 	}
 	
 	
-rule CrowdStrike_ PutterPanda _03 : threepara_para_implant putterpanda
+rule CrowdStrike_PutterPanda_03 : threepara_para_implant putterpanda
 	{
 	meta:
 		description = "PUTTER PANDA - 3PARA RAT"
@@ -134,7 +134,7 @@ rule CrowdStrike_ PutterPanda _03 : threepara_para_implant putterpanda
 	    3 of them
 	}
 	
-rule CrowdStrike_ PutterPanda _05 : httpclient putterpanda
+rule CrowdStrike_PutterPanda_05 : httpclient putterpanda
 	{
 	meta:
 		description = "PUTTER PANDA - HTTPCLIENT"
@@ -151,7 +151,7 @@ rule CrowdStrike_ PutterPanda _05 : httpclient putterpanda
 	    any of them
 	}
 	
-rule CrowdStrike_ PutterPanda _06 : xor_dropper putterpanda
+rule CrowdStrike_PutterPanda_06 : xor_dropper putterpanda
 	{
 	meta:
 		description = "PUTTER PANDA - XOR based dropper"
