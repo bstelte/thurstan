@@ -36,6 +36,13 @@ import os
 import traceback
 import pickle
 import re
+import urllib2
+import urllib
+import json
+
+api = 'your vt api key here'
+base = 'https://www.virustotal.com/vtapi/v2/'
+virustotal_active = 0
 
 yaraRules = []
 yaraRulesText = []
@@ -104,6 +111,28 @@ def getFileNameIOCs(ioc_file):
 
     return filenames
 
+def getReport(md5):
+	param = {'resource':md5,'apikey':api}
+	url = base + "file/report"
+	data = urllib.urlencode(param)
+	result = urllib2.urlopen(url,data)
+	jdata = json.loads(result.read())
+	return jdata
+
+def parse(it, md5):
+	if it['response_code'] == 0:
+		print md5 + " -- Not Found in VirusTotal Database"
+		return 0
+	print "\n\tResults for MD5: ",it['md5'],"\n\n\tDetected by: ",it['positives'],'/',it['total'],'\n'
+	if 'Sophos' in it['scans']:
+		print '\tSophos Detection:',it['scans']['Sophos']['result'],'\n'
+	if 'Kaspersky' in it['scans']:
+		print '\tKaspersky Detection:',it['scans']['Kaspersky']['result'], '\n'
+	if 'ESET-NOD32' in it['scans']:
+		print '\tESET Detection:',it['scans']['ESET-NOD32']['result'],'\n'
+	print '\tScanned on:',it['scan_date']
+	return 1
+
 from itertools import cycle, izip
 def str_xor(s1, s2):
  return ''.join(chr(ord(c)^ord(k)) for c,k in izip(s1, cycle(s2)))
@@ -112,7 +141,7 @@ print "  Simple IOC Scanner next generation"
 print "  "
 print "  (c) Björn Stelte"
 print "  v0.1"
-print "  extented version based on loki:"
+print "  extented version based on loki IOC scanner:"
 print "  "
 
 try:
@@ -170,8 +199,18 @@ while True:
 		   data = c.recv(4096)
 		   if data: 
 			print 'Got connection from %s at %s - Msg %s' % (addr, currentTime, data)
-			with open("thurstan_server.log", "a") as logfile:
-		    		logfile.write('"%s", "%s", "%s"\r\n' % (addr, currentTime, data))
+			datastring = data
+			if (datastring.startswith('Hash ')):
+				md5=datastring.replace('Hash ','')
+				with open("thurstan_server_hash.log", "a") as logfilehash:
+			    		logfilehash.write('%s\r\n' % (md5))
+				if (virustotal_active == 1):
+					if (parse(getReport(md5.upper),md5) == 1):
+						with open("thurstan_server.log", "a") as logfile:
+			    				logfile.write('VirusTotal MD5 Hash %s found\r\n' % (md5))
+			else:
+				with open("thurstan_server.log", "a") as logfile:
+			    		logfile.write('"%s", "%s", "%s"\r\n' % (addr, currentTime, data))
 		   if (data == "yara"):
 			for i in yaraRulesText[0:]: 
 				c.send(str_xor(i, 'YaraRules'))
@@ -199,4 +238,4 @@ while True:
 		   c.close()                # Close the connection
 	except Exception, e:
 		print " Socket Error "
-	
+		traceback.print_exc()

@@ -67,6 +67,16 @@ except Exception, e:
 LINUX_PATH_SKIPS_START = Set(["/proc", "/dev", "/sys/kernel/debug", "/sys/kernel/slab", "/sys/devices", "/usr/src/linux" ])
 LINUX_PATH_SKIPS_END = Set(["/initctl"])
 
+def md5sum(filename):
+	fh = open(filename, 'rb')
+	m = hashlib.md5()
+	while True:
+		data = fh.read(8192)
+		if not data:
+			break
+		m.update(data)
+	return m.hexdigest() 
+
 def recv_timeout(the_socket,timeout=1):
     #make socket non blocking
     the_socket.setblocking(0)
@@ -233,6 +243,7 @@ def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, f
 
                     if matchType:
                         log("ALERT", "Malware Hash TYPE: %s HASH: %s FILE: %s DESC: %s" % ( matchType, matchHash, filePath, matchDesc))
+			log("ALERT", "Hash %s" % (matchHash))
 
                     # Yara Check -------------------------------------------------------
                     try:
@@ -241,6 +252,7 @@ def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, f
                             if matches:
                                 for match in matches:
                                     log("ALERT", "Yara Rule MATCH: %s FILE: %s" % ( match.rule, filePath))
+				    log("ALERT", "Hash %s" % (md5sum(filePath)))
                     except Exception, e:
                         if args.debug:
                             traceback.print_exc()
@@ -624,7 +636,7 @@ def initializeYaraRules_ng():
         if args.debug:
             traceback.print_exc()
 
-    log ("INFO", "%s Yara Rules loaded" % len(yaraRules))
+    log ("INFO", "%s Yara Rule Files loaded" % len(yaraRules))
     return yaraRules
 
 
@@ -711,7 +723,7 @@ def log(mes_type, message):
 	    port = 12345                # Reserve a port for your service.
 	    s.connect((args.x, port))
 	    #hostmessage = "match"
-	    hostmessage = "%s THURSTAN match: %s \n" % (t_hostname, removeNonAsciiDrop(message))
+	    hostmessage = "%s \n" % (removeNonAsciiDrop(message))
 	    s.send(hostmessage)
 	    print s.recv(1024)
 	    s.close     
