@@ -588,5 +588,5 @@ rule gen_win_killav
 		$str579="zonealarm.exe"
 
 	condition:
-		$magic at 0 and (4 of ($str*))
+		$magic at 0 and (8 of ($str*))
 }

@@ -4072,3 +4072,251 @@ c83042491efade4a4a46f437bee5212033c168ee;ZIP archive 2014-07-04 Linux/Mumblehard
 e62c7c253f18ec7777fdd57e4ae500ad740183fb;ELF executable 2014-05-17 Linux/Mumblehard.E.Gen
 58d4f901390b2ecb165eb455501f37ef8595389a;ZIP archive 2009-03-25 Linux/Mumblehard.M.Gen
 4ae33caebfd9f1e3481458747c6a0ef3dee05e49;ELF executable 2013-06-27 Linux/Mumblehard.M.Gen
+
+00f67deb6e435c68f8a39336c9effc45d395b134; FSecure CozyDuke
+
+01d3973e1bb46e2b75034736991c567862a11263; FSecure CozyDuke
+
+034481acd945028f4521cf0eaa3685c6202f9e19; FSecure CozyDuke
+
+04aefbf1527536159d72d20dea907cbd080793e3; FSecure CozyDuke
+
+08facf0ae484f5bc7b066bbdd382e683fdfcba77; FSecure CozyDuke
+
+0a38765d599865dabc394287e61f5e8f6ac442c5; FSecure CozyDuke
+
+1051f814b33991a1f8e551759ead44b8ee7fc2c9; FSecure CozyDuke
+
+1a3825ef1064c2bbea5169671ef62030b00875ca; FSecure CozyDuke
+
+1d734a26184005603605aab67eba76d7d5ec3b8c; FSecure CozyDuke
+
+1e02eea130d17b9afb712d846612ab8bd6972183; FSecure CozyDuke
+
+210bc99275368df7ea179055737cffc3a12a6614; FSecure CozyDuke
+
+23e20c523b9970686d913360d438c88e6067c157; FSecure CozyDuke
+
+2564d7d42384bd3dce7257ef4a0a4b0cedac635b; FSecure CozyDuke
+
+259b4679c26625c452141861014fe2f2c336462b; FSecure CozyDuke
+
+26d030c93c517d63147f502bf6536c3914698821; FSecure CozyDuke
+
+29686320a3f06030f7192ca5b4f3eb47e73cb470; FSecure CozyDuke
+
+29a91e7823046f4ec3fd6b3fd1b442eaa92f3565; FSecure CozyDuke
+
+31163d35c5a3caa5e82e1d9b0d1b4db8fbdd79fa; FSecure CozyDuke
+
+32b0c8c46f8baaba0159967c5602f58dd73ebde9; FSecure CozyDuke
+
+33beb7a410f1cd699733000b5b30b5e4eb2062ba; FSecure CozyDuke
+
+3583647ef8158e29e3c18413ece70c2851720926; FSecure CozyDuke
+
+365cbfe32a79ce41b049dd85bb30afc51ba1ea6f; FSecure CozyDuke
+
+37144694cfa953ab7acd376c033beda45cc95f4d; FSecure CozyDuke
+
+3a624b196576b03d327b43247a975da44688ffda; FSecure CozyDuke
+
+3b297f0ca7750c0c74e5f931fec1528fe1ba6bc9; FSecure CozyDuke
+
+3c8ba7ca3675ecc75855a58b9c0527d067c88f86; FSecure CozyDuke
+
+3f0be1751afa9cb0fdd6bc6fc9874dd880bc8c1b; FSecure CozyDuke
+
+41bb403d2549db95cfc6c851ef92ad26bdf2e906; FSecure CozyDuke
+
+42cfe068b0f476198b93393840d400424fd77f0c; FSecure CozyDuke
+
+42fadc443025a132f833a4a5ed8a5350f79a86cc; FSecure CozyDuke
+
+43a979aa6ab08685d9ce949c67e19bebbb3c3559; FSecure CozyDuke
+
+443bc2e77b10ae64af6321c2c7bfd311c0772503; FSecure CozyDuke
+
+44406a80f13045442ce6a28ee62a923ac8f8c56a; FSecure CozyDuke
+
+482d1624f9450ca1c99926ceec2606260e7ce544; FSecure CozyDuke
+
+4975293c49ca223013088e51b8378e935322fe93; FSecure CozyDuke
+
+49fb759d133eeaab3fcc78cec64418e44ed649ab; FSecure CozyDuke
+
+4a16674c799fae6535c82f878f6a37f94ee9a49b; FSecure CozyDuke
+
+5150174a4d5e5bb0bccc568e82dbb86406487510; FSecure CozyDuke
+
+55bd71353408cdda1bdbbd54bc70b4c595d70e56; FSecure CozyDuke
+
+56ac317ed78f8016d59cb41e9283b1c08cbf149f; FSecure CozyDuke
+
+5bcd74e0c3c661580201e7d8122d7525a1480b4c; FSecure CozyDuke
+
+5d3b82cdea4ae066efd5d127c7dd222adee62d0b; FSecure CozyDuke
+
+5d4535df615a30b87b57facf4babf8d506e86a07; FSecure CozyDuke
+
+5ffe420a3cc848024884db8e2cfed68c47368dae; FSecure CozyDuke
+
+6502bffbd1324071c7461c50a2552e48084560ae; FSecure CozyDuke
+
+662d3cb303450abae2b88699c7f48d74f84f0d5a; FSecure CozyDuke
+
+669b7c98f0f697b91e95804dacdfe55fae3f0a85; FSecure CozyDuke
+
+69c82f6ca382bd2205d55b89f2e842b4790bda62; FSecure CozyDuke
+
+6b5ef7b76b35203dd323af49bfa27cfa7e1b6376; FSecure CozyDuke
+
+6b64ed0f4e39a1c320c7cbd342a93faed9f5df86; FSecure CozyDuke
+
+71c59eaa445346251467942bac489a9d4e807f7f; FSecure CozyDuke
+
+75aeaee253b5c8ae701195e3b0f49308f3d1d932; FSecure CozyDuke
+
+75e03a17d49d1b052770a21520bc13b14fc6c607; FSecure CozyDuke
+
+7765a0869530c1a17b8fd339bbe55cc4c1bdba30; FSecure CozyDuke
+
+78e9960cc5819583fb98fb619b33bff7768ee861; FSecure CozyDuke
+
+7c710cf31f20ef7e0ad1809672255d4edfdff052; FSecure CozyDuke
+
+7c79e3205323b9917f9eedcd3d5a891d87ddf256; FSecure CozyDuke
+
+7cda99eefb5150b87278f9bcf6ac0bde534b99e8; FSecure CozyDuke
+
+80935ac2ab3cf5b2900b49f6982a6a3f4575367c; FSecure CozyDuke
+
+81affba765aa87a0d0b12b5a213f09fd51e1e9a1; FSecure CozyDuke
+
+87668d14910c1e1bb8bbea0c6363f76e664dcd09; FSecure CozyDuke
+
+883292f00e5836f99a1943a6e0164d8c6c124478; FSecure CozyDuke
+
+8ad2003b99d92dfb9d85912ee6a39c46b1ec8137; FSecure CozyDuke
+
+8b357ff017df3ed882b278d0dbbdf129235d123d; FSecure CozyDuke
+
+8ba7932a40008881a4ed975f52271c0b679eaff2; FSecure CozyDuke
+
+8bc2d5aa1f384d56f3e921bce5326de8ff4dce2d; FSecure CozyDuke
+
+8c3ed0bbdc77aec299c77f666c21659840f5ce23; FSecure CozyDuke
+
+8cc326473fd30ab5c97709e5a91fb04e18e72e96; FSecure CozyDuke
+
+8f1ac45360196a7b5a1680ff839a131394e9d9b4; FSecure CozyDuke
+
+8f467b32f1ec0f3b2efe10b3fed2a14b16075702; FSecure CozyDuke
+
+9319bf72000f8e468c182947dd5c82fb8b9ae419; FSecure CozyDuke
+
+93d53be2c3e7961bc01e0bfa5065a2390305268c; FSecure CozyDuke
+
+93ee1c714fad9cc1bf2cba19f3de9d1e83c665e2; FSecure CozyDuke
+
+94520b93510db0dc10387a65e0a46f45ab501226; FSecure CozyDuke
+
+975b86c329c537f763f94a3f12610304dd358ff8; FSecure CozyDuke
+
+9b56155b82f14000f0ec027f29ff20e6ae5205c2; FSecure CozyDuke
+
+9dc6bbc34933ffecbfbb454788bab4230fcc2c65; FSecure CozyDuke
+
+9e156f41ff9c17692c9eba5bdb67ac14f0c0473f; FSecure CozyDuke
+
+9f8f1672594a6fbac43793c857dd7718e75f328a; FSecure CozyDuke
+
+a38ea2533e3dfa6339726aafd4bc2bc7e3eec529; FSecure CozyDuke
+
+a7a00f35797db2db9302625be456671911896d27; FSecure CozyDuke
+
+a99d8313876015fcf1b783d38fee9e9c3cde088c; FSecure CozyDuke
+
+ac2b5928f46069111f4334f650a7dbf1b5f026d5; FSecure CozyDuke
+
+b26bc0a3e35c474f7099bd2b066f1680f3394b14; FSecure CozyDuke
+
+b2b2e5c5a6f8a07f051aab14fbec1f6607888b50; FSecure CozyDuke
+
+b47e711845d03c389004c912b3fbfc59228bb18c; FSecure CozyDuke
+
+b5e973df0a159ab583fc8923c796c8cbf5b535df; FSecure CozyDuke
+
+ba29768a2452a0e3abde02a903e53a181ee05bc8; FSecure CozyDuke
+
+bdd2bae83c3bab9ba0c199492fe57e70c6425dd3; FSecure CozyDuke
+
+bf265227f9a8e22ea1c0035ac4d2449ceed43e2b; FSecure CozyDuke
+
+bf9d3a45273608caf90084c1157de2074322a230; FSecure CozyDuke
+
+c02b8c2bc15dd8a7110e5f1765716464bf421591; FSecure CozyDuke
+
+c117608dab3ab632de8110f8981dd7e773c61d05; FSecure CozyDuke
+
+c3d8a548fa0525e1e55aa592e14303fc6964d28d; FSecure CozyDuke
+
+c3fde950fe7d668805b40b1680d519f20c18b899; FSecure CozyDuke
+
+c5ef4c31693845d492285e5f1c7ff3c293f99976; FSecure CozyDuke
+
+c62e840ffe4bba50f6584b33a877475f0ebcf558; FSecure CozyDuke
+
+c6472898e9085e563cd56baeb6b6e21928c5486d; FSecure CozyDuke
+
+c7b91ff3cc69dab807016aa76d0c261411ccf27d; FSecure CozyDuke
+
+c8fe2296565c211e019cdad3918a5736d4b12d44; FSecure CozyDuke
+
+caa1083d2f20be0858e8d3d0671c042d0455a657; FSecure CozyDuke
+
+cb7652aede9b1b7d756019f44c25fb0263498313; FSecure CozyDuke
+
+ccf83cd713e0f078697f9e842a06d624f8b9757e; FSecure CozyDuke
+
+ce9d077349638ffd3e1ad68cda76c12cfb024069; FSecure CozyDuke
+
+cebcf2f495c3b95138128d0577dcac5cde29490d; FSecure CozyDuke
+
+d12e4f164a4734e8136da85001750157014d012c; FSecure CozyDuke
+
+d3254f1f4c4def8c023982dfb28fa31e91b69ab5; FSecure CozyDuke
+
+d5cbf554e4e700b37ddcb026d4407fcd87032d87; FSecure CozyDuke
+
+d89fc09f1aa72547d4b7f022470b6c8362997a5f; FSecure CozyDuke
+
+daa651188610fd9c5a6987109e7ee5504d72a35d; FSecure CozyDuke
+
+e0779ac6e5cc76e91fca71efeade2a5d7f099c80; FSecure CozyDuke
+
+e2d0edf2e7d4a09fad732d4113d970a56e9a6667; FSecure CozyDuke
+
+e76da232ec020d133530fdd52ffcc38b7c1d7662; FSecure CozyDuke
+
+e99a03ebe3462d2399f1b819f48384f6714dcba1; FSecure CozyDuke
+
+ea0cfe60a7b7168c42c0e86e15feb5b0c9674029; FSecure CozyDuke
+
+eb851adfada7b40fc4f6c0ae348694500f878493; FSecure CozyDuke
+
+efd41300ccf4143d04664715e1de98cb416ffdd1; FSecure CozyDuke
+
+f2ffc4e1d5faec0b7c03a233524bb78e44f0e50b; FSecure CozyDuke
+
+f33c980d4b6aaab1dc401226ab452ce840ad4f40; FSecure CozyDuke
+
+f38040c70024fe9e305af5a3687e0d5993bb9e96; FSecure CozyDuke
+
+f7693e5d39db067d97cd91fb22522f94c59fda3d; FSecure CozyDuke
+
+f7d47c38eca7ec68aa478c06b1ba983d9bf02e15; FSecure CozyDuke
+
+fb1b1dc288d68f695f88c5ac036b3ab1c4f5e850; FSecure CozyDuke
+
+feb9424386af47d550b13614c78530bc06ec876e; FSecure CozyDuke
