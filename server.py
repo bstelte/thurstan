@@ -39,10 +39,21 @@ import re
 import urllib2
 import urllib
 import json
+import ConfigParser
 
-api = 'your vt api key here'
-base = 'https://www.virustotal.com/vtapi/v2/'
-virustotal_active = 0
+#api = 'your vt api key here'
+#base = 'https://www.virustotal.com/vtapi/v2/'
+#virustotal_active = 0
+
+config = ConfigParser.ConfigParser()
+config.read("server.ini")
+
+api = config.get("virustotal", "api")
+base = config.get("virustotal", "base")
+virustotal_active = config.get("virustotal", "virustotal_active")
+logfilename = config.get("logfile", "logfilename")
+hashfilename = config.get("logfile", "hashfilename")
+vtfilename = config.get("logfile", "vtfilename")
 
 yaraRules = []
 yaraRulesText = []
@@ -112,14 +123,22 @@ def getFileNameIOCs(ioc_file):
     return filenames
 
 def getReport(md5):
+    jdata = " "
+    try:
 	param = {'resource':md5,'apikey':api}
 	url = base + "file/report"
 	data = urllib.urlencode(param)
 	result = urllib2.urlopen(url,data)
 	jdata = json.loads(result.read())
-	return jdata
+	
+    except Exception, e:
+        #traceback.print_exc()
+        print "Error VirusTotal API"
 
-def parse(it, md5):
+    return jdata
+
+def parse(it, md5, vtfilename):
+   try:
 	if it['response_code'] == 0:
 		print md5 + " -- Not Found in VirusTotal Database"
 		return 0
@@ -131,7 +150,14 @@ def parse(it, md5):
 	if 'ESET-NOD32' in it['scans']:
 		print '\tESET Detection:',it['scans']['ESET-NOD32']['result'],'\n'
 	print '\tScanned on:',it['scan_date']
-	return 1
+
+	with open(vtfilename, "a") as logfile:
+    		logfile.write('"%s", "%s", "%s", "%s/%s", "%s", "%s", "%s" \r\n' % (time.ctime(time.time()), md5, it['positives'], it['total'], it['scans']['Sophos']['result'], it['scans']['Kaspersky']['result'], it['scans']['ESET-NOD32']['result']))
+
+   except Exception, e:
+        #traceback.print_exc()
+        print "Error JSON parser"
+   return 1
 
 from itertools import cycle, izip
 def str_xor(s1, s2):
@@ -143,6 +169,9 @@ print "  (c) Björn Stelte"
 print "  v0.1"
 print "  extented version based on loki IOC scanner:"
 print "  "
+
+if (virustotal_active == "1"):
+	print "VirusTotal API activated - will search for hash-values in VT database "
 
 try:
 	for file in ( os.listdir("./signatures")  ):
@@ -177,7 +206,7 @@ try:
 
 except Exception, e:
 	print "ERROR Error reading signature folder /signatures/"
-	traceback.print_exc()
+	#traceback.print_exc()
 
 filenameIOCs = getFileNameIOCs("./signatures/filename-iocs.txt")
 filenameSuspiciousIOCs = getFileNameIOCs("./signatures/filename-suspicious.txt")
@@ -202,14 +231,14 @@ while True:
 			datastring = data
 			if (datastring.startswith('Hash ')):
 				md5=datastring.replace('Hash ','')
-				with open("thurstan_server_hash.log", "a") as logfilehash:
+				with open(hashfilename, "a") as logfilehash:
 			    		logfilehash.write('%s\r\n' % (md5))
-				if (virustotal_active == 1):
-					if (parse(getReport(md5.upper),md5) == 1):
-						with open("thurstan_server.log", "a") as logfile:
+				if (virustotal_active == "1"):
+					if (parse(getReport(md5.upper),md5,vtfilename) == 1):
+						with open(logfilename, "a") as logfile:
 			    				logfile.write('VirusTotal MD5 Hash %s found\r\n' % (md5))
 			else:
-				with open("thurstan_server.log", "a") as logfile:
+				with open(logfilename, "a") as logfile:
 			    		logfile.write('"%s", "%s", "%s"\r\n' % (addr, currentTime, data))
 		   if (data == "yara"):
 			for i in yaraRulesText[0:]: 
@@ -238,4 +267,4 @@ while True:
 		   c.close()                # Close the connection
 	except Exception, e:
 		print " Socket Error "
-		traceback.print_exc()
+		#traceback.print_exc()
