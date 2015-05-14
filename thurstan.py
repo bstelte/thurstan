@@ -31,7 +31,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
-
+BUFSIZE = 4096 * 1000
+MAXRECORD = 4096 * 16
+MINRECORD = 0x30
 
 import sys
 import os
@@ -47,7 +49,10 @@ import platform
 import psutil
 import pickle
 import time
+import binascii
 import socket               # Import socket module
+import sqlite3
+import re
 
 from sets import Set
 from colorama import Fore, Back, Style
@@ -57,11 +62,12 @@ from colorama import init
 try:
     import wmi
     from win32com.shell import shell
+    #from Evt.Evt import EvtCarver
+  
     isLinux = False
 except Exception, e:
     print "Linux System - deactivating process memory check ..."
     isLinux= True
-#     isLinux= False
 
 # Predefined paths to skip (Linux platform)
 LINUX_PATH_SKIPS_START = Set(["/proc", "/dev", "/sys/kernel/debug", "/sys/kernel/slab", "/sys/devices", "/usr/src/linux" ])
@@ -257,6 +263,23 @@ def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, f
                         if args.debug:
                             traceback.print_exc()
 
+		    # regin check
+   		    fp = open(filePath, 'r')
+		    CRC32custom=fp.read(4)[::-1]
+    		    regindata=fp.read(0x7)
+		    fp.close()
+		    crc = binascii.crc32(regindata, 0x45)
+		    crc2 = '%08x' % (crc & 0xffffffff)
+		    if CRC32custom.encode('hex') == crc2:
+  			log("ALERT", "possible REGIN virtual filesystem FILE: %s" % (filePath))
+
+		    # firefox forensic - analysis at server
+		    if ("downloads.sqlite" in filePath.lower()) :
+			printDownloads(filePath)
+		    if ("cookies.sqlite" in filePath.lower()) :
+			printCookies(filePath)
+  		    if ("places.sqlite" in filePath.lower()) :
+			printHistory(filePath)
                 except Exception, e:
                     if args.debug:
                         traceback.print_exc()
@@ -741,6 +764,61 @@ def getSyslogTimestamp():
     date_str_mod = daymod.sub(r"\1  \2", date_str)
     return date_str_mod
 
+# --- source: O`Connor, T: Violent Python - examples
+
+def printDownloads(downloadDB):
+    conn = sqlite3.connect(downloadDB)
+    c = conn.cursor()
+    c.execute('SELECT name, source, datetime(endTime/1000000,\
+    \'unixepoch\') FROM moz_downloads;'
+              )
+    log('NOTICE', ' FireFox Cache Files Downloaded ')
+    for row in c:
+        log('NOTICE', ' File: ' + str(row[0]) + ' from source: ' \
+            + str(row[1]) + ' at: ' + str(row[2]))
+
+
+def printCookies(cookiesDB):
+    try:
+        conn = sqlite3.connect(cookiesDB)
+        c = conn.cursor()
+        c.execute('SELECT host, name, value FROM moz_cookies')
+
+        log('NOTICE', 'FireFox Cache Found Cookies' )
+        for row in c:
+            host = str(row[0])
+            name = str(row[1])
+            value = str(row[2])
+            log('NOTICE', ' Cookies - Host: ' + host + ', Cookie: ' + name \
+                + ', Value: ' + value)
+    except Exception, e:
+        if 'encrypted' in str(e):
+            print ' Error reading your cookies database.'
+            print ' Upgrade your Python-Sqlite3 Library'
+
+
+def printHistory(placesDB):
+    try:
+        conn = sqlite3.connect(placesDB)
+        c = conn.cursor()
+        c.execute("select url, datetime(visit_date/1000000, \
+          'unixepoch') from moz_places, moz_historyvisits \
+          where visit_count > 0 and moz_places.id==\
+          moz_historyvisits.place_id;")
+
+        log('NOTICE', ' Found FireFox Cache History')
+        for row in c:
+            url = str(row[0])
+            date = str(row[1])
+            log('NOTICE', ' History ' + date + ' - Visited: ' + url )
+    except Exception, e:
+        if 'encrypted' in str(e):
+            print ' Error reading your places database.'
+            print ' Upgrade your Python-Sqlite3 Library'
+            exit(0)
+
+# ---
+
 
 def printWelcome():
     print " THURSTAN "
@@ -852,6 +930,20 @@ if __name__ == '__main__':
     # Result ----------------------------------------------------------
     print " "
     if alerts:
+	#if not isLinux:
+		##evt
+		#log("RESULT","WINDOWS EVENT LOG")
+		#analyzer = EvtCarver(defaultPath, chunksize=BUFSIZE, maxrecord=MAXRECORD)
+		#for entry in analyzer.carve():
+		#	log("RESULT",entry)
+		#s = analyzer.get_status()
+		#log("RESULT","Carved %d records" % s.valid)
+		#log("RESULT","Skipped %d records with length greater than %s" % ( s.too_big, hex(MAXRECORD) ))
+		#log("RESULT","Skipped %d records with length less than %s" % ( s.too_small, hex(MINRECORD) ))
+		#log("RESULT","Skipped %d records with invalid structure" % s.bad_structure)
+		#log("RESULT","Skipped %d records with invalid content" % s.bad_content)
+		
+
         log("RESULT", "INDICATORS DETECTED!")
         log("RESULT", "THURSTAN recommends a forensic analysis and triage with a professional triage tool.")
     elif warnings:
