@@ -51,6 +51,7 @@ config.read("server.ini")
 api = config.get("virustotal", "api")
 base = config.get("virustotal", "base")
 virustotal_active = config.get("virustotal", "virustotal_active")
+cymru_active = config.get("cymru", "cymru_active")
 logfilename = config.get("logfile", "logfilename")
 hashfilename = config.get("logfile", "hashfilename")
 vtfilename = config.get("logfile", "vtfilename")
@@ -122,6 +123,26 @@ def getFileNameIOCs(ioc_file):
 
     return filenames
 
+def getReportCymru(md5):
+   
+    try:
+	mhr=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	mhr.connect(("hash.cymru.com",43))
+	mhr.send(str(md5+"\r\n"))
+	response=''
+	while True:
+		d=mhr.recv(4096)
+		response+=d
+		if d=='':
+			break
+	if "NO_DATA" not in response:
+		return 1 
+	
+    except Exception, e:
+        pass
+
+    return 0
+
 def getReport(md5):
     jdata = " "
     try:
@@ -172,6 +193,8 @@ print "  "
 
 if (virustotal_active == "1"):
 	print "VirusTotal API activated - will search for hash-values in VT database "
+if (cymru_active == "1"):
+	print "CYMRU API activated - will search for hash-values in Cymru MHR database "
 
 try:
 	for file in ( os.listdir("./signatures")  ):
@@ -237,6 +260,10 @@ while True:
 					if (parse(getReport(md5.upper),md5,vtfilename) == 1):
 						with open(logfilename, "a") as logfile:
 			    				logfile.write('VirusTotal MD5 Hash %s found\r\n' % (md5))
+				if (cymru_active == "1"):
+					if (getReportCymru(md5.upper) == 1):
+						with open(logfilename, "a") as logfile:
+			    				logfile.write('CYMRU MD5 Hash %s found\r\n' % (md5))
 			else:
 				with open(logfilename, "a") as logfile:
 			    		logfile.write('"%s", "%s", "%s"\r\n' % (addr, currentTime, data))
