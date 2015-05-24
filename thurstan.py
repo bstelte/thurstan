@@ -63,7 +63,8 @@ try:
     import wmi
     from win32com.shell import shell
     #from Evt.Evt import EvtCarver
-  
+    import win32api
+    import win32con  
     isLinux = False
 except Exception, e:
     print "Linux System - deactivating process memory check ..."
@@ -127,6 +128,31 @@ from itertools import cycle, izip
 def str_xor(s1, s2):
  return ''.join(chr(ord(c)^ord(k)) for c,k in izip(s1, cycle(s2)))
 
+#regquerysubkeys from code.activestate.com
+def regquerysubkeys(handle, key, keylist = []):
+    #get registry handle
+    reghandle = win32api.RegOpenKeyEx(handle, key, 0, win32con.KEY_READ)    
+    try:
+        i = 0
+        #enumerates subkeys and recursively calls this function again
+        while True:
+           subkey = win32api.RegEnumKey(reghandle, i)
+           i += 1
+           #braintwister here ;-)
+           regquerysubkeys(handle, key + subkey + "\\", keylist)
+    except win32api.error as ex:
+           #If no more subkeys can be found, we can append ourself
+           if ex[0] == 259:
+               keylist.append(key)
+           #unexpected exception is raised
+           else:
+               raise
+    finally:
+        #do some cleanup and close the handle
+        win32api.RegCloseKey(reghandle)
+    #returns the generated list
+    return keylist
+
 def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, false_hashes):
 
     # Startup
@@ -179,6 +205,10 @@ def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, f
                         mode = os.stat(filePath).st_mode
                         if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(mode) or stat.S_ISSOCK(mode):
                             continue
+		    else:
+			registrykeylist = regquerysubkeys(win32con.HKEY_CURRENT_USER, "Software\\Microsoft\\Windows\\CurrentVersion\\Run")
+			if "USBGuard" in registrykeylist:
+				log("WARNING", "Possible SOFACY infection - found USBGuard Value in Windows-Registry")
 
                     # Counter
                     c += 1
@@ -264,14 +294,14 @@ def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, f
                             traceback.print_exc()
 
 		    # regin check
-   		    fp = open(filePath, 'r')
-		    CRC32custom=fp.read(4)[::-1]
-    		    regindata=fp.read(0x7)
-		    fp.close()
-		    crc = binascii.crc32(regindata, 0x45)
-		    crc2 = '%08x' % (crc & 0xffffffff)
-		    if CRC32custom.encode('hex') == crc2:
-  			log("ALERT", "possible REGIN virtual filesystem FILE: %s" % (filePath))
+   		    #fp = open(filePath, 'r')
+		    #CRC32custom=fp.read(4)[::-1]
+    		    #regindata=fp.read(0x7)
+		    #fp.close()
+		    #crc = binascii.crc32(regindata, 0x45)
+		    #crc2 = '%08x' % (crc & 0xffffffff)
+		    #if CRC32custom.encode('hex') == crc2:
+  		    #	log("ALERT", "possible REGIN virtual filesystem FILE: %s" % (filePath))
 
 		    # firefox forensic - analysis at server
 		    if ("downloads.sqlite" in filePath.lower()) :
@@ -283,6 +313,7 @@ def scanPath(path, rule_sets, filename_iocs, filename_suspicious_iocs, hashes, f
                 except Exception, e:
                     if args.debug:
                         traceback.print_exc()
+		    pass
 
 
 def scanProcesses(rule_sets, filename_iocs, filename_suspicious_iocs):
@@ -658,7 +689,8 @@ def initializeYaraRules_ng():
 	log("ERROR", data)
         if args.debug:
             traceback.print_exc()
-
+	log("ERROR", "Please use parameter '-x' with correct IP of the server!")
+	exit(1)
     log ("INFO", "%s Yara Rule Files loaded" % len(yaraRules))
     return yaraRules
 
@@ -741,7 +773,7 @@ def log(mes_type, message):
             logfile.write("%s %s THURSTAN: %s\n" % (getSyslogTimestamp(), t_hostname, removeNonAsciiDrop(message)))
 
 	# Write to server
-        if ((args.x) and ((mes_type == "ALERT") or (mes_type == "WARNING") or (mes_type == "RESULT"))):
+        if ((args.x) and ((mes_type == "ALERT") or (mes_type == "WARNING") or (mes_type == "RESULT")) or (mes_type == "NOTICE")):
             s = socket.socket()         # Create a socket object
 	    port = 12345                # Reserve a port for your service.
 	    s.connect((args.x, port))
@@ -753,7 +785,7 @@ def log(mes_type, message):
 
 
     except Exception, e:
-        traceback.print_exc()
+        #traceback.print_exc()
         print "Cannot print/send log file"
 
 
@@ -764,19 +796,23 @@ def getSyslogTimestamp():
     date_str_mod = daymod.sub(r"\1  \2", date_str)
     return date_str_mod
 
-# --- source: O`Connor, T: Violent Python - examples
-
+# --- FireFox source: O`Connor, T: Violent Python - examples
 def printDownloads(downloadDB):
-    conn = sqlite3.connect(downloadDB)
-    c = conn.cursor()
-    c.execute('SELECT name, source, datetime(endTime/1000000,\
-    \'unixepoch\') FROM moz_downloads;'
-              )
-    log('NOTICE', ' FireFox Cache Files Downloaded ')
-    for row in c:
-        log('NOTICE', ' File: ' + str(row[0]) + ' from source: ' \
-            + str(row[1]) + ' at: ' + str(row[2]))
-
+  try:
+	    conn = sqlite3.connect(downloadDB)
+	    c = conn.cursor()
+	    c.execute('SELECT name, source, datetime(endTime/1000000,\
+	    \'unixepoch\') FROM moz_downloads;'
+		      )
+	    log('NOTICE', ' FireFox Cache Files Downloaded ')
+	    for row in c:
+		log('NOTICE', ' File: ' + str(row[0]) + ' from source: ' \
+		    + str(row[1]) + ' at: ' + str(row[2]))
+  except Exception, e:
+        if 'encrypted' in str(e):
+            print ' Error reading your downloads database.'
+            #print ' Upgrade your Python-Sqlite3 Library'
+	pass
 
 def printCookies(cookiesDB):
     try:
@@ -794,8 +830,8 @@ def printCookies(cookiesDB):
     except Exception, e:
         if 'encrypted' in str(e):
             print ' Error reading your cookies database.'
-            print ' Upgrade your Python-Sqlite3 Library'
-
+            #print ' Upgrade your Python-Sqlite3 Library'
+	pass
 
 def printHistory(placesDB):
     try:
@@ -814,8 +850,8 @@ def printHistory(placesDB):
     except Exception, e:
         if 'encrypted' in str(e):
             print ' Error reading your places database.'
-            print ' Upgrade your Python-Sqlite3 Library'
-            exit(0)
+            #print ' Upgrade your Python-Sqlite3 Library'
+        pass
 
 # ---
 
