@@ -117,3 +117,8 @@ temp\\msupdate\.exe;Equation Related File Name http://pastebin.com/QvZNtuQW
 \\fanny\.bmp;Equation Related File Name http://pastebin.com/QvZNtuQW
 WINDOWS\\mlan\.exe;Equation Related File Name http://pastebin.com/QvZNtuQW
 Windows\\mlan\.exe;Equation Related File Name http://pastebin.com/QvZNtuQW
+
+#KJWORM
+SecurityNajaf\.vbs;VBS_KJWORM.SMA
+DoOoM\.lnk; sir doom worm 
+DoOoM\.vbs; sir doom worm
