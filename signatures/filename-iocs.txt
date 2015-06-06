@@ -122,3 +122,6 @@ Windows\\mlan\.exe;Equation Related File Name http://pastebin.com/QvZNtuQW
 SecurityNajaf\.vbs;VBS_KJWORM.SMA
 DoOoM\.lnk; sir doom worm 
 DoOoM\.vbs; sir doom worm
+
+#BE2
+winntd\_\.dat
