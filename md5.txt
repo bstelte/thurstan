@@ -1,2 +1,4 @@
+74786c7a5e0c74d637e5953f04cc322e  server
+e5267fc80b4f339fb01f33686e730049  server.exe
+5f3d76e3e25f02cbaf6e7e1387c4108e  thurstan
 896c214867a715a40fee4c5e06f6ecc9  thurstan.exe
-52409fc2230a237dacaea31fc486096b  server.exe
