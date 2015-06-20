@@ -2,7 +2,7 @@
 
 Scanner for Simple Indicators of Compromise with client/server Architecture
 
-Detection is based on four detection methods:
+Detection is based on three detection methods:
 
     1. File Name IOC
        Regex match on full file path/name
@@ -12,6 +12,7 @@ Detection is based on four detection methods:
 
     3. Hash check
        Compares known malicious hashes (MD5, SHA1, SHA256) with scanned files
+       If activated reports from VirusTotal and Cymru to found hash-values will be shown
 
 ## How-To Run Thurstan and Analyse the Reports
 
@@ -19,7 +20,8 @@ Detection is based on four detection methods:
 
   - Download the program archive via the button "Download ZIP" on the right sidebar
   - Unpack THURSTAN (server.exe and signatures folder) locally
-  - open a command line "cmd.exe" and run server.exe from there
+  - Open a command line "cmd.exe" and run server.exe from there
+  - The configuration can be found in "server.ini"
 
 ### Run Client
 
@@ -30,6 +32,7 @@ Detection is based on four detection methods:
 
 ### Problems
 
+  - For the Client programm, the parameter "-x" is mandatory 
   - You may need to install the Visual C++ 2010 redistributables packages
   - Link: http://www.microsoft.com/en-us/download/details.aspx?id=14632
 
