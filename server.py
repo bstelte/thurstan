@@ -83,11 +83,11 @@ def getHashes(hash_file):
                 if len(hash) == 32 or len(hash) == 40 or len(hash) == 64:
                     hashes[hash.lower()] = comment
             except Exception,e:
-                log("ERROR", "Cannot read line: %s" % line)
+                print "Cannot read line: %s" % line
 
     except Exception, e:
         traceback.print_exc()
-        log("ERROR", "Error reading Hash file: %s" % hash_file)
+        print "Error reading Hash file: %s" % hash_file
 
     return hashes
 
