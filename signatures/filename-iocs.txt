@@ -124,4 +124,8 @@ DoOoM\.lnk; sir doom worm
 DoOoM\.vbs; sir doom worm
 
 #BE2
-winntd\_\.dat
+winntd\_\.dat; BE2
+
+#SOFACY
+winexecsvc\.exe; SOFACY
+svchost\.exe\.exe; SOFACY
