@@ -12427,3 +12427,10 @@ b80232f25dbceb6953994e45fb7ff749; miniDuke/cosmicDuke 2015 Kaspersky
 7fcf05f7773dc3714ebad1a9b28ea8b9; miniDuke/cosmicDuke 2015 Kaspersky
 edf7a81dab0bf0520bfb8204a010b730; miniDuke/cosmicDuke 2015 Kaspersky
 ba57f95eba99722ebdeae433fc168d72; miniDuke/cosmicDuke 2015 Kaspersky
+
+53a9e1b59ff37cc2aeff0391cc546201; HackingTeam Italy
+8df850088e2324d5c89615be32bd8a35; HackingTeam Italy
+015c238d56b8657c0946ec45b131362a; HackingTeam Italy
+daa5912d4ca0e4a143378947ef329374; HackingTeam Italy
+c5cfa1afd5d3148a0d33fc1940ea1a37; HackingTeam Italy
+c17e788e28d47891f94c64739ee7fffb; HackingTeam Italy
