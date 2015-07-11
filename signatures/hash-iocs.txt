@@ -12434,3 +12434,9 @@ ba57f95eba99722ebdeae433fc168d72; miniDuke/cosmicDuke 2015 Kaspersky
 daa5912d4ca0e4a143378947ef329374; HackingTeam Italy
 c5cfa1afd5d3148a0d33fc1940ea1a37; HackingTeam Italy
 c17e788e28d47891f94c64739ee7fffb; HackingTeam Italy
+
+934E1055B171DF0D3E28BE9831EB7770; Anunak_APT-against-financial-institutions
+4cf26f8E2f6864c4a8aaa7f92E54E801; Anunak_APT-against-financial-institutions
+ac5D3fc9Da12255759a4a7E4EB3D63E7; Anunak_APT-against-financial-institutions
+
+
