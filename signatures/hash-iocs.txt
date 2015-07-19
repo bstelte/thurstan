@@ -12468,3 +12468,32 @@ c04c796ef126ad7429be7d55720fe392; iocbucket_13e5d0358dcecb0fc1fbb8b236990c0ae957
 6b6c4c0e2959df248be90d89899953a9; iocbucket_13e5d0358dcecb0fc1fbb8b236990c0ae9572ec3_webc2-qbp_(family).ioc
 5ae0efccce47ea16bcc61e4003c1c57f; iocbucket_13e5d0358dcecb0fc1fbb8b236990c0ae9572ec3_webc2-qbp_(family).ioc
 
+1f48360f95e1b43e9fba0fec5a2afb8; plugx update.exe
+e1e0b8b0673937415599bf2f24c44ad; plugx mscvsmap.exe
+d4a646b38a482cc07d5b09b4fffd3b3; plugx mcutil.dll
+45bb4365a9b7cdb6d22844ebeedda93; plugx mcutil.dll.ppt
+5ceb039e7b4731a165cfee081e220af; plugx dump00C60000.bin
+2df5c2c07433e2a8f054c2347acb3b4; plugx uac.tmp
+e22b839f042c391fb022dc58fe7901b5; plugx dw20.dll
+83006ac9fb73bc2b891f36dd2f759230; plugx
+fe3548281f9716862ee6e614ae7a0e76; plugx sidebar.dll
+7d36518acf345794a0a6421542d1c6b8b052e58a; plugx sidebar.dll.doc
+142c996adaea6de8ed611b36234dd22f; plugx 7.tmp
+d376f29dc8a1c6fd4b8849c9d57e3e03; plugx word.exe
+34759f8055257be08e02a4ddca74d3ec; plugx ssmuidll.dll
+3a70a7af3bd6fc92f76efaa6a14f3bf4; plugx ssmuidll.dll
+8de6e24ea641b97e75c822500729384c; plugx ssmuidll.dll.conf
+ec96ff2d06f8ece9d88622a62f6d2bf3; plugx ssmuidll.dll.conf
+17bc9d2a640da75db6cbb66e5898feb1; plugx operation-poisoned-hurricane
+eae0391e92a913e757ac78b14a6f079f; plugx operation-poisoned-hurricane
+434b539489c588db90574a64f9ce781f; plugx operation-poisoned-hurricane
+7e6c8992026a79c080f88103f6a69d2c; plugx operation-poisoned-hurricane
+52d2d1ab9b84303a585fb81e927b9e01; plugx operation-poisoned-hurricane
+787c6cf3cb18feeabe4227ec6b19db01; plugx operation-poisoned-hurricane
+50af349c69ae4dec74bc41c581b82459; plugx operation-poisoned-hurricane
+d51050cf98cc723f0173d1c058c12721; plugx operation-poisoned-hurricane
+cc1a806d25982acdb35dd196ab8171bc; plugx blue coat
+198fd054105ad89a93e401d8f59320d1; plugx blue coat 
+cc7b091b94c4f0641b180417b017fec2; plugx blue coat
+
+
