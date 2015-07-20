@@ -12495,5 +12495,6 @@ d51050cf98cc723f0173d1c058c12721; plugx operation-poisoned-hurricane
 cc1a806d25982acdb35dd196ab8171bc; plugx blue coat
 198fd054105ad89a93e401d8f59320d1; plugx blue coat 
 cc7b091b94c4f0641b180417b017fec2; plugx blue coat
-
+3f22750c919217d4fa57183b7f2adaaf; plugx msi.dll July 1st 2015
+a18b748564f67ead58ece5b679b8a8f6; plugx msi.dll February 23rd 2015
 
