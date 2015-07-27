@@ -12413,9 +12413,9 @@ eb22b99d44223866e24872d80a4ddefd; cozyDuke dropped\5463\reader_sl.ex_
 abda8f078ba3f099a634e3aa8a94983a; REGIN disp.dll Kaspersky-Report
 
 44BCF2DD262F12222ADEAB6F59B2975B; /2015/ANALYSIS-ON-APT-TO-BE-ATTACK-THAT-FOCUSING-ON-CHINAS-GOVERNMENT-AGENCY-.pdf	
-12FEB4A9EEDEE411B283000C29FD2872; /home/bstelte/tasks/APT/APTnotes/Dino	
-A88E8181CA5CE35AE70C76145DFB820D; /home/bstelte/tasks/APT/APTnotes/Dino	
-BF551FBDCF5A982705C01094436883A6AD3B75BD; /home/bstelte/tasks/APT/APTnotes/Dino	
+12FEB4A9EEDEE411B283000C29FD2872; Dino	
+A88E8181CA5CE35AE70C76145DFB820D; Dino	
+BF551FBDCF5A982705C01094436883A6AD3B75BD; Dino	
 d102693540b53f9a564e3a550f938709; /2015/UnFIN4ished_Business_pwd.pdf	
 67ecc3b8c6057090c7982883e8d9d0389a8a8f6e8b00f9e9b73c45b008241322; /2015/cto-tib-20150420-01a.pdf	
 8e61219b18d36748ce956099277cc29b; /2015/winnti_pharmaceutical.pdf	
@@ -12512,3 +12512,53 @@ a34faccff1091a2809f59e5192bcb8e3; poison ivy
 083e4c63494f417aac671a24cd868de3; poison ivy
 
 6b65d58031845f290f2a109ead245ab4; njRAT  milano.exe
+
+92e724291056a5e30eca038ee637a23f; duqu2.0
+089a14f69a31ea5e9a5b375dc0c46e45; duqu2.0
+16ed790940a701c813e0943b5a27c6c1; duqu2.0
+26c48a03a5f3218b4a10f2d3d9420b97; duqu2.0
+a6dcae1c11c0d4dd146937368050f655; duqu2.0
+acbf2d1f8a419528814b2efa9284ea8b; duqu2.0
+c04724afdb6063b640499b52623f09b5; duqu2.0
+e8eaec1f021a564b82b824af1dbe6c4d; duqu2.0
+10e16e36fe459f6f2899a8cea1303f06; duqu2.0
+48fb0166c5e2248b665f480deac9f5e1; duqu2.0
+520cd9ee4395ee85ccbe073a00649602; duqu2.0
+7699d7e0c7d6b2822992ad485caacb3e; duqu2.0
+84c2e7ff26e6dd500ec007d6d5d2255e; duqu2.0
+856752482c29bd93a5c2b62ff50df2f0; duqu2.0
+85f5feeed15b75cacb63f9935331cf4e; duqu2.0
+8783ac3cc0168ebaef9c448fbe7e937f; duqu2.0
+966953034b7d7501906d8b4cd3f90f6b; duqu2.0
+a14a6fb62d7efc114b99138a80b6dc7d; duqu2.0
+a6b2ac3ee683be6fbbbab0fa12d88f73; duqu2.0
+cc68fcc0a4fab798763632f9515b3f92; duqu2.0
+3f52ea949f2bd98f1e6ee4ea1320e80d; duqu2.0
+c7c647a14cb1b8bc141b089775130834; duqu2.0
+
+01039a95e0a14767784acc8f07035935; minidionis
+0f9534b63cb7af1e3aa34839d7d6e632; minidionis
+2e64131c0426a18c1c363ec69ae6b5f2; minidionis
+70f5574e4e7ad360f4f5c2117a7a1ca7; minidionis
+1dd593ad084e1526c8facce834b0e124; minidionis
+42ffc84c6381a18b1f6d000b94c74b09; minidionis
+719cf63a3922953ceaca6fb4dbed6584; minidionis
+f415470b9f0edc1298b1f6ae75dfaf31; minidionis
+ca770a4c9881afcd610aad30aa53f651; minidionis
+24083e6186bc773cd9c2e70a49309763; minidionis
+b0a9a175e2407352214b2d005253bc0c; minidionis
+b55628a605a5dfb5005c44220ae03b8a; minidionis
+26bd36cc57e30656363ca89910579f63; minidionis
+a9c045c401afb9766e2ca838dc6f47a4; minidionis
+f8cb10b2ee8af6c5555e9cf3701b845f; minidionis
+c8b49b42e6ebb6b977ce7001b6bd96c8; minidionis
+030da7510113c28ee68df8a19c643bb0; minidionis
+e07ef8ffe965ec8b72041ddf9527cac4; minidionis
+4cbd9a0832dcf23867b092de37c10d9d; minidionis
+3a04a5d7ed785daa16f4ebfd3acf0867; minidionis
+9018fa0826f237342471895f315dbf39; minidionis
+98613ecb3afde5fc48ca4204f8363f1d; minidionis
+e00bf9b8261410744c10ae3fe2ce9049; minidionis
+51ea28f4f3fa794d5b207475897b1eef; minidionis
+3195110045f64a3c83fc3e043c46d253; minidionis
+1dd593ad084e1526c8facce834b0e124; minidionis
